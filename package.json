@@ -60,6 +60,7 @@
     "linkify-it": "^2.0.2",
     "markdown-it": "^8.2.1",
     "markdown-it-footnote": "^3.0.1",
+    "markdown-it-task-checkbox": "^1.0.1",
     "match-at": "^0.1.0",
     "mdurl": "^1.0.1",
     "sprintf-js": "^1.0.3",

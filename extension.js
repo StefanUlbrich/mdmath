@@ -10,6 +10,7 @@ const path = require('path');
 const hl = require('highlight.js');
 const kt = require('katex');
 const mf = require('markdown-it-footnote');
+const cb = require('markdown-it-task-checkbox');
 const md = require('markdown-it')({ html: true,
                                     linkify: true,
                                     highlight: function(str,lang) {
@@ -19,8 +20,8 @@ const md = require('markdown-it')({ html: true,
                                         }
                                         return '<pre class="hljs"><code><div>' + md.utils.escapeHtml(str) + '</div></code></pre>';
                                     }
-                                  }).use(mf);
-                                    
+                                  }).use(mf).use(cb);
+
 
 // this method is called when extension is activated ..
 exports.activate = function activate(context) {
@@ -93,9 +94,9 @@ const MathProvider = {
     },
 
     showPreviewCmd: function() {
-        vscode.commands.executeCommand('vscode.previewHtml', 
-                                        MathProvider.viewUri, 
-                                        vscode.ViewColumn.Two, 
+        vscode.commands.executeCommand('vscode.previewHtml',
+                                        MathProvider.viewUri,
+                                        vscode.ViewColumn.Two,
                                         "Preview: "+path.basename(MathProvider.fname))
                         .then(success => {}, error => {console.error(error)});
     },
