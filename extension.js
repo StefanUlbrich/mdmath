@@ -10,7 +10,7 @@ const path = require('path');
 const hl = require('highlight.js');
 const kt = require('katex');
 const mf = require('markdown-it-footnote');
-const cb = require('markdown-it-task-checkbox');
+const cb = require('markdown-it-checkbox');
 const md = require('markdown-it')({ html: true,
                                     linkify: true,
                                     highlight: function(str,lang) {
